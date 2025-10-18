@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, PermissionFlagsBits } = require('discord.js');
-const { JsonDB, Config } = require('node-json-db');
+const { JsonDB } = require('node-json-db');
+const { Config } = require('node-json-db/dist/lib/JsonDBConfig');
 const fs = require('fs');
 const path = require('path');
 const LanguageManager = require('../src/LanguageManager');
@@ -19,13 +20,13 @@ module.exports = {
             if (!interaction.member.permissions.has(PermissionFlagsBits.ManageGuild)) {
                 const noPermissionTitle = await LanguageManager.getTranslation(interaction.guild.id, 'commands.language.errortitle');
                 const noPermissionDesc = await LanguageManager.getTranslation(interaction.guild.id, 'commands.language.permission_required');
-                
+
                 const errorEmbed = new EmbedBuilder()
                     .setTitle(noPermissionTitle)
                     .setDescription(noPermissionDesc)
                     .setColor('#ff0000')
                     .setTimestamp();
-                
+
                 return await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
             }
 
@@ -122,13 +123,13 @@ module.exports = {
             if (!interaction.member.permissions.has(PermissionFlagsBits.ManageGuild)) {
                 const noPermissionTitle = await LanguageManager.getTranslation(interaction.guild.id, 'commands.language.errortitle');
                 const noPermissionDesc = '❌ Bu butonu kullanmak için **Sunucuyu Yönet** yetkisine sahip olmalısın!';
-                
+
                 const errorEmbed = new EmbedBuilder()
                     .setTitle(noPermissionTitle)
                     .setDescription(noPermissionDesc)
                     .setColor('#ff0000')
                     .setTimestamp();
-                
+
                 return await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
             }
 
