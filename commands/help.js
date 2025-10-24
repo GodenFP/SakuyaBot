@@ -5,7 +5,7 @@ const LanguageManager = require('../src/LanguageManager');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
-        .setDescription('Shows all bot commands and features'),
+        .setDescription('查看機器人的幫助頁面(指令/狀態)'),
 
     async execute(interaction, client) {
         try {
@@ -61,12 +61,15 @@ module.exports = {
                 inline: false
             });
 
+            /*
             // Features
             embed.addFields({
                 name: t.featuresTitle,
                 value: Array.isArray(t.featuresList) ? t.featuresList.join('\n') : t.featuresList,
                 inline: false
             });
+            
+            */
 
             // How to Use
             embed.addFields({
@@ -128,9 +131,9 @@ module.exports = {
             embed.addFields({
                 name: t.linksTitle,
                 value: [
-                    `[🌐 Website](${config.bot.website})`,
-                    `[💬 Support Server](${config.bot.supportServer})`,
-                    `[📄 Invite Bot](${config.bot.invite})`
+                    // `[🌐 網站](${config.bot.website})`,
+                    // `[💬 支援伺服器](${config.bot.supportServer})`,
+                    `[📄 邀請此機器人!](${config.bot.invite})`
                 ].join('\n'),
                 inline: true
             });

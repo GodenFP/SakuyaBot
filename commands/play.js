@@ -6,10 +6,12 @@ const LanguageManager = require('../src/LanguageManager');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('play')
-        .setDescription('Plays music - Supports YouTube, Spotify, SoundCloud or direct links')
+        // .setDescription('Plays music - Supports YouTube, Spotify, SoundCloud or direct links')
+        .setDescription('播放音樂 - 支援 YouTube, Spotify, SoundCloud 或 連結')
         .addStringOption(option =>
             option.setName('query')
-                .setDescription('Song name, artist, YouTube/Spotify/SoundCloud URL or direct link')
+                // .setDescription('Song name, artist, YouTube/Spotify/SoundCloud URL or direct link')
+                .setDescription('歌名, 歌手/作曲家, YouTube/Spotify/SoundCloud URL或連結')
                 .setRequired(true)
         ),
 

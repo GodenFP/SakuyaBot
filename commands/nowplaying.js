@@ -5,7 +5,8 @@ const LanguageManager = require('../src/LanguageManager');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('nowplaying')
-        .setDescription('Shows information about currently playing song'),
+        // .setDescription('Shows information about currently playing song'),
+        .setDescription('顯示當前歌曲資訊'),
 
     async execute(interaction, client) {
         try {

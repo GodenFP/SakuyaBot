@@ -11,7 +11,8 @@ const db = new JsonDB(new Config('database/languages', true, true, '/'));
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('language')
-        .setDescription('Changes server language')
+        // .setDescription('Changes server language')
+        .setDescription('切換此機器人在此伺服器的語言設置')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild),
 
     async execute(interaction, client) {

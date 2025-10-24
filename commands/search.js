@@ -6,10 +6,12 @@ const LanguageManager = require('../src/LanguageManager');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('search')
-        .setDescription('Search and select music on YouTube')
+        // .setDescription('Search and select music on YouTube')
+        .setDescription('搜尋並選取Youtube上的音樂')
         .addStringOption(option =>
             option.setName('query')
-                .setDescription('Music name or artist to search')
+                // .setDescription('Music name or artist to search')
+                .setDescription('歌曲名稱 或 歌手/作曲家名稱')
                 .setRequired(true)
         ),
 
