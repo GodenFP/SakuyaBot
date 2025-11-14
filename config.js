@@ -57,7 +57,7 @@ module.exports = {
         quality: 'highestaudio',
         highWaterMark: 1 << 25,
         cookiesFromBrowser: process.env.COOKIES_FROM_BROWSER || null, // 'chrome', 'firefox', 'edge', 'safari'
-        cookiesFile: process.env.COOKIES_FILE || null, // './cookies.txt'
+        cookiesFile: process.env.COOKIES_FILE || './cookies.txt', // './cookies.txt'
     },
 
     // Sharding Settings (for bots in 1000+ servers)
